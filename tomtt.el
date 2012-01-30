@@ -1,5 +1,5 @@
 (custom-set-variables
- '(ns-alternate-modifier (quote super))
+ '(ns-alternate-modifier (quote none))
  '(ns-command-modifier (quote meta)))
 
 ;; Load file for sensitive data not to be checked into source control
