@@ -119,3 +119,8 @@
 (remove-hook 'prog-mode-hook 'esk-turn-on-idle-highlight-mode)
 
 (setq ffip-limit 5000)
+
+;; Whitespace cleanup keybinding
+(global-set-key "\C-xw" 'whitespace-cleanup)
+
+(setq whitespace-line-column 160)
