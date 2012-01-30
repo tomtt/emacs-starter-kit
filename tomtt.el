@@ -111,3 +111,9 @@
 ;(require 'edit-server)
 ;(edit-server-start)
 ;(setq edit-server-new-frame nil)
+
+; remove hooks that emacs-starter-kit thinks are nifty but are just annoying
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+(remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
+(remove-hook 'prog-mode-hook 'esk-add-watchwords)
+(remove-hook 'prog-mode-hook 'esk-turn-on-idle-highlight-mode)
