@@ -117,3 +117,5 @@
 (remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
 (remove-hook 'prog-mode-hook 'esk-add-watchwords)
 (remove-hook 'prog-mode-hook 'esk-turn-on-idle-highlight-mode)
+
+(setq ffip-limit 5000)
