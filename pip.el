@@ -22,7 +22,13 @@
   (next-line)
   (indent-for-tab-command))
 
+(defun open-line-above ()
+  (interactive)
+  (previous-line)
+  (open-line-at-end))
+
 (global-set-key "\C-o" 'open-line-at-end)
+(global-set-key "\M-o" 'open-line-above)
 (global-set-key "\M-k" 'kill-whole-line)
 
 ;; Code indent levels
