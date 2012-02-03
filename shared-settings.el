@@ -79,6 +79,8 @@
 
 (setq whitespace-line-column 160)
 
+(menu-bar-mode 1)
+
 ;; yasnippet
 (require 'yasnippet-bundle)
 
