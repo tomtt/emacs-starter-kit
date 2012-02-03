@@ -24,6 +24,7 @@
 
 (defun open-line-above ()
   (interactive)
+  (indent-for-tab-command)  
   (previous-line)
   (open-line-at-end))
 
@@ -45,6 +46,8 @@
 ;; It's so easy to accidentally press ^Z and minimize emacs...
 (global-unset-key "\C-z")
 
+
+(global-set-key [C-tab] 'comment-or-uncomment-region)
 (require 'gist)
 
 ;; Major Modes
