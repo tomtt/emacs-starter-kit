@@ -79,6 +79,9 @@
 
 (setq whitespace-line-column 160)
 
+;; yasnippet
+(require 'yasnippet-bundle)
+
 ; emacsclient server
 (server-start)
 
