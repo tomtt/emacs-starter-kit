@@ -74,6 +74,10 @@
 
 (setq ffip-limit 5000)
 
+;;; rhtml mode
+(add-to-list 'load-path "~/.emacs.d/lib/rhtml")
+(require 'rhtml-mode)
+
 ;; Whitespace cleanup keybinding
 (global-set-key "\C-xw" 'whitespace-cleanup)
 
