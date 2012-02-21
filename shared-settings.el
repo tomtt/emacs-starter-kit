@@ -95,6 +95,12 @@
 (global-set-key "\C-c;" 'colonize-word-at-point)
 (global-set-key "\C-c/" 'camelscore-word-at-point)
 
+(defun rocket ()
+  (interactive)
+  (insert " => "))
+
+(global-set-key "\C-cl" 'rocket)
+
 ;; yasnippet
 (require 'yasnippet-bundle)
 
