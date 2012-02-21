@@ -85,6 +85,16 @@
 
 (menu-bar-mode 1)
 
+(global-subword-mode 1)
+
+(require 'camelscore)
+(global-set-key "\C-cu" 'underscore-word-at-point)
+(global-set-key "\C-cd" 'dasherize-word-at-point)
+(global-set-key "\C-cc" 'camelize-word-at-point)
+(global-set-key "\C-c:" 'colonize-word-at-point)
+(global-set-key "\C-c;" 'colonize-word-at-point)
+(global-set-key "\C-c/" 'camelscore-word-at-point)
+
 ;; yasnippet
 (require 'yasnippet-bundle)
 
