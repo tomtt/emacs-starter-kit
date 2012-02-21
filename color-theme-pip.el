@@ -1,6 +1,6 @@
 (require 'color-theme)
 
-(defun color-theme-tomtt (&optional preview)
+(defun color-theme-pip (&optional preview)
   "Based on color-theme-hober"
   (interactive)
   (color-theme-install
@@ -148,7 +148,12 @@
      (flyspell-incorrect-face ((t (:foreground "OrangeRed" :bold t :underline t))))
      (flyspell-duplicate-face ((t (:foreground "Gold3" :bold t :underline t))))
      (flymake-errline-face ((((class color)) (:background "DarkRed")))) ;; TtT: flymake seems to not care what I put here
-     (flymake-warnline-face ((((class color)) (:background "DarkBlue")))) ;; TtT: flymake seems to not care what I put here
+      (flymake-warnline-face ((((class color)) (:background "DarkBlue")))) ;; TtT: flymake seems to not care what I put here
+      (erb-face ((t (:foreground "#c0c0c0" :background "black"))))
+      (erb-out-delim-face ((t (:foreground "#aa00aa" :background "black"))))
+      (erb-exec-delim-face ((t (:foreground "ff66ff" :background "black"))))
+      (erb-comment-face ((t (:foreground "red" :background "black"))))
+      (erb-comment-delim-face ((t (:foreground "#990000" :background "black"))))
 )))
 
-(color-theme-tomtt)
+(color-theme-pip)
