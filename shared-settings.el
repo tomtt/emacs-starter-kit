@@ -94,6 +94,7 @@
 (global-set-key "\C-c:" 'colonize-word-at-point)
 (global-set-key "\C-c;" 'colonize-word-at-point)
 (global-set-key "\C-c/" 'camelscore-word-at-point)
+(global-set-key "\C-cs" 'symbolize-word-at-point)
 
 (defun rocket ()
   (interactive)

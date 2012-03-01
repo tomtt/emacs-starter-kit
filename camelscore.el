@@ -10,7 +10,18 @@
 (defun dasherize  (s) (mapconcat 'downcase   (split-name-to-components s) "-"))
 (defun colonize   (s) (mapconcat 'capitalize (split-name-to-components s) "::"))
 
-(defun camelscore (s)	
+(defun starts-with-colon (s) (eq 0 (string-match ":" s)))
+
+(defun symbolize  (s)
+  (if (starts-with-colon s)
+    s
+    (replace-regexp-in-string
+      "[\"']?\\([^:].*\\)[\"']?" ":\\1"
+      (underscore
+        (replace-regexp-in-string
+          "[\"']?\\([a-zA-Z0-9]\\)[\"']?" "\\1" s)))))
+                                    
+(defun camelscore (s)
   (cond
     ((string-match-p "\:" s) (camelcase s))
     ((string-match-p "-"  s) (colonize s))
@@ -21,6 +32,14 @@
   (let* ((case-fold-search nil)
           (beg (and (skip-chars-backward "[:alnum:]:_-") (point)))
           (end (and (skip-chars-forward  "[:alnum:]:_-") (point)))
+          (txt (buffer-substring beg end))
+          (cml (funcall function txt)) )
+    (if cml (progn (delete-region beg end) (insert cml))) ))
+
+(defun change-word-or-string-at-point (function)
+  (let* ((case-fold-search nil)
+          (beg (and (skip-chars-backward "'\"[:alnum:]:_-") (point)))
+          (end (and (skip-chars-forward  "'\"[:alnum:]:_-") (point)))
           (txt (buffer-substring beg end))
           (cml (funcall function txt)) )
     (if cml (progn (delete-region beg end) (insert cml))) ))
@@ -44,5 +63,9 @@
 (defun camelscore-word-at-point ()
   (interactive)
   (camel-change-word-at-point 'camelscore))
+
+(defun symbolize-word-at-point ()
+  (interactive)
+  (change-word-or-string-at-point 'symbolize))
 
 (provide 'camelscore)
