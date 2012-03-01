@@ -9,6 +9,7 @@
 (defun underscore (s) (mapconcat 'downcase   (split-name-to-components s) "_"))
 (defun dasherize  (s) (mapconcat 'downcase   (split-name-to-components s) "-"))
 (defun colonize   (s) (mapconcat 'capitalize (split-name-to-components s) "::"))
+(defun spacerize  (s) (mapconcat 'identity   (split-name-to-components s) " "))
 
 (defun starts-with-colon (s) (eq 0 (string-match ":" s)))
 
@@ -27,7 +28,7 @@
       (underscore
         (replace-regexp-in-string
           "[\"']?\\([a-zA-Z0-9]\\)[\"']?" "\\1" s)))))
-                                    
+
 (defun camelscore (s)
   (cond
     ((string-match-p "\:" s) (camelcase s))
@@ -78,5 +79,9 @@
 (defun quotify-word-at-point ()
   (interactive)
   (change-word-or-string-at-point 'quotify))
+
+(defun spacerize-word-at-point ()
+  (interactive)
+  (change-word-or-string-at-point 'spacerize))
 
 (provide 'camelscore)
