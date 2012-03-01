@@ -12,6 +12,13 @@
 
 (defun starts-with-colon (s) (eq 0 (string-match ":" s)))
 
+(defun quotify  (s)
+  (concat
+    "\""
+    (replace-regexp-in-string
+      "[\"':]?\\([^\"':]*\\)[\"']?" "\\1" s)
+    "\""))
+
 (defun symbolize  (s)
   (if (starts-with-colon s)
     s
@@ -67,5 +74,9 @@
 (defun symbolize-word-at-point ()
   (interactive)
   (change-word-or-string-at-point 'symbolize))
+
+(defun quotify-word-at-point ()
+  (interactive)
+  (change-word-or-string-at-point 'quotify))
 
 (provide 'camelscore)
