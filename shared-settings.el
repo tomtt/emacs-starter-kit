@@ -106,7 +106,7 @@
 (global-set-key "\C-cl" 'rocket)
 
 ;; yasnippet
-(require 'yasnippet-bundle)
+;;(require 'yasnippet-bundle)
 
 ; emacsclient server
 (server-start)
