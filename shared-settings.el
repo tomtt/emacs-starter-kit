@@ -82,6 +82,7 @@
 (global-set-key "\C-xw" 'whitespace-cleanup)
 
 (setq whitespace-line-column 160)
+(global-whitespace-mode t)
 
 (menu-bar-mode 1)
 
@@ -113,3 +114,6 @@
 
 (provide 'shared-settings)
 ;;; shared-settings.el ends here.
+
+(require 'whitespace-cleanup-mode)
+(global-whitespace-cleanup-mode t)
